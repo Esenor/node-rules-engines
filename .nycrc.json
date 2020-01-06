@@ -1,0 +1,21 @@
+{
+  "all": true,
+  "cache": false,
+  "include": [
+    "src/**/*.js"
+  ],
+  "exclude": [
+    "**/*.spec.js",
+    "example/**/*.js"
+  ],
+  "lines": 20,
+  "functions": 20,
+  "statements": 20,
+  "branches": 0,
+  "report-dir": "./coverage",
+  "reporter": [
+    "cobertura",
+    "text"
+  ],
+  "check-coverage": false
+}

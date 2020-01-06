@@ -1,0 +1,6 @@
+test/test-results.xml
+node_modules
+.vscode
+.nyc_output
+.DS_Store
+coverage
