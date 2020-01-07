@@ -23,3 +23,10 @@ jobs:
         npm run coverage
       env:
         CI: true
+    - name: Coverage monitor
+      uses: slavcodev/coverage-monitor-action@1.0.1
+      with:
+        github_token: ${{ secrets.GITHUB_TOKEN }}
+        clover_file: "coverage/clover.xml"
+        threshold_alert: 10
+        threshold_warning: 50
