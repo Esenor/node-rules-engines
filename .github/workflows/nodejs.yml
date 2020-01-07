@@ -23,8 +23,11 @@ jobs:
         npm run coverage
       env:
         CI: true
-    - name: npm test & coverage
-      run: |
-        npm run coverage
+    - name: Test & publish code coverage
+      uses: paambaati/codeclimate-action@v2.4.0
       env:
+        CC_TEST_REPORTER_ID: 1e22bddb55d151988de2f0a971c33178da971f43c951c4d6694b519487cdb1f8
         CI: true
+      with:
+        coverageCommand: npm run coverage
+        debug: true
