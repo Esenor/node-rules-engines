@@ -1,3 +1,8 @@
+/**
+ * Default rule factory create method
+ * @param function ifFunc
+ * @param function thenFunc
+ */
 const create = (ifFunc, thenFunc) => {
   if (typeof ifFunc !== 'function') {
     throw new Error(`ifFunc function is not a function (${typeof ifFunc})`)

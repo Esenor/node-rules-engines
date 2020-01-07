@@ -14,7 +14,7 @@
   "branches": 0,
   "report-dir": "./coverage",
   "reporter": [
-    "cobertura",
+    "clover",
     "text"
   ],
   "check-coverage": false
