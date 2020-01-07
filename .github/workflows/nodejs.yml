@@ -17,16 +17,14 @@ jobs:
       uses: actions/setup-node@v1
       with:
         node-version: ${{ matrix.node-version }}
-    - name: npm install and test
+    - name: npm install
       run: |
         npm ci
         npm run coverage
       env:
         CI: true
-    - name: Coverage monitor
-      uses: slavcodev/coverage-monitor-action@1.0.1
-      with:
-        github_token: ${{ secrets.GITHUB_TOKEN }}
-        clover_file: "coverage/clover.xml"
-        threshold_alert: 10
-        threshold_warning: 50
+    - name: npm test & coverage
+      run: |
+        npm run coverage
+      env:
+        CI: true
