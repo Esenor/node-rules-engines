@@ -9,7 +9,7 @@ jobs:
 
     strategy:
       matrix:
-        node-version: [10.x, 12.x]
+        node-version: [10.x, 12.x, 13.x]
 
     steps:
     - uses: actions/checkout@v1
@@ -20,6 +20,6 @@ jobs:
     - name: npm install and test
       run: |
         npm ci
-        npm coverage
+        npm run coverage
       env:
         CI: true
