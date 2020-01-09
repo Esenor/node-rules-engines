@@ -27,7 +27,7 @@ const hasRule = (bundle, rule) => {
 /**
  *
  */
-const getRules = bundle => bundle._rules
+const getRules = ({ _rules }) => _rules
 
 /**
  *

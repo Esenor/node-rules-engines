@@ -51,5 +51,13 @@ describe('Rules processor testing', () => {
       const bundle = rulesProcessor.createBundle([defaultRule, defaultRule])
       expect(bundle.getRules()).to.be.deep.equal([defaultRule, defaultRule])
     })
+
+    it('Should return the a new bundle when function addRule is used', () => {
+      const bundle = rulesProcessor.createBundle([defaultRule, defaultRule])
+      const newBundle = bundle.addRule(defaultRule).addRule(defaultRule)
+      expect(bundle._rules).to.be.deep.equal([defaultRule, defaultRule])
+      expect(newBundle._rules).to.be.deep.equal([defaultRule, defaultRule, defaultRule, defaultRule])
+      expect(newBundle).to.not.be.deep.equal(bundle)
+    })
   })
 })
