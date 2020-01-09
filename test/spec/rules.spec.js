@@ -6,7 +6,7 @@ describe('Rules testing', () => {
   describe('Rule factory testing', () => {
     it('Should export an object', () => assert.isObject(rulesFactory))
 
-    it('Should export a create function', () => assert.isFunction(rulesFactory.create))
+    it('Should expose a create function', () => assert.isFunction(rulesFactory.create))
 
     describe('Create function testing', () => {
       it('Should thrown an error if no "if function" given', () => {
@@ -43,7 +43,7 @@ describe('Rules testing', () => {
     const emptyRule = rulesFactory.create(() => { }, () => { })
     it('Should be an object', () => assert.isObject(rule))
 
-    it('Should export a run function', () => assert.isFunction(rule.run))
+    it('Should expose a run function', () => assert.isFunction(rule.run))
 
     it('Should not validate an empty rule', () => {
       const baseObject = { foo: 'zen', k: 97 }

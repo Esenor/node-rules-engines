@@ -18,5 +18,5 @@ const create = (ifFunc, thenFunc) => {
 }
 
 module.exports = {
-  create: create
+  create
 }
