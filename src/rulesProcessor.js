@@ -1,3 +1,5 @@
+const utils = require('./utils')
+
 const processRules = rules => {
   if (!Array.isArray(rules)) {
     throw new Error(`process method need an array of rules to work(rule type of ${typeof rules})`)
@@ -10,25 +12,25 @@ const processRules = rules => {
 }
 
 const standard = (rules, data) => {
-  if (typeof data !== 'object') {
-    throw new Error(`process.standard data need to be an object (type of ${data})`)
-  }
-  console.log(typeof rules)
-  return { ...data }
+  utils.throwIfNotObject(data, 'process.standard data')
+  const newData = rules.reduce((data, rule) => {
+    data = rule.run(data)
+    return data
+  }, data)
+  return { ...newData }
 }
 
 const reverse = (rules, data) => {
-  if (typeof data !== 'object') {
-    throw new Error(`process.reverse data need to be an object (type of ${data})`)
-  }
-  console.log(typeof rules)
-  return { ...data }
+  utils.throwIfNotObject(data, 'process.reverse data')
+  const newData = rules.reverse().reduce((data, rule) => {
+    data = rule.run(data)
+    return data
+  }, data)
+  return { ...newData }
 }
 
 const whileOneRuleIsTrue = (rules, data) => {
-  if (typeof data !== 'object') {
-    throw new Error(`process.whileOneRuleIsTrue data need to be an object (type of ${data})`)
-  }
+  utils.throwIfNotObject(data, 'process.whileOneRuleIsTrue data')
   console.log(typeof rules)
   return { ...data }
 }
