@@ -1,7 +1,8 @@
 const { describe, it } = require('mocha')
 const { assert, expect } = require('chai')
-const rulesProcessor = require('../../src/rulesProcessor')
-const rulesFactory = require('../../src/rulesFactory')
+const env = (process.env.TEST_LIB) ? 'lib' : 'src'
+const rulesProcessor = require(`../../${env}/rulesProcessor`)
+const rulesFactory = require(`../../${env}/rulesFactory`)
 
 const rules = [
   rulesFactory.create(data => typeof data.label !== 'string', data => ({ ...data, label: 'placeholder' })),

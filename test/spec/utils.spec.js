@@ -1,6 +1,7 @@
 const { describe, it } = require('mocha')
 const { expect, assert } = require('chai')
-const utils = require('../../src/utils')
+const env = (process.env.TEST_LIB) ? 'lib' : 'src'
+const utils = require(`../../${env}/utils`)
 
 describe('utils testing', () => {
   it('Should export an object', () => assert.isObject(utils))

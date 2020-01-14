@@ -1,6 +1,7 @@
 const { describe, it } = require('mocha')
 const { assert, expect } = require('chai')
-const rulesFactory = require('../../src/rulesFactory')
+const env = (process.env.TEST_LIB) ? 'lib' : 'src'
+const rulesFactory = require(`../../${env}/rulesFactory`)
 
 describe('Rules testing', () => {
   describe('Rule factory testing', () => {

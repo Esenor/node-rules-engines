@@ -1,8 +1,9 @@
 const { describe, it } = require('mocha')
 const { expect, assert } = require('chai')
-const indexModule = require('../../src')
-const rulesFactory = require('../../src/rulesFactory')
-const rulesProcessor = require('../../src/rulesProcessor')
+const env = (process.env.TEST_LIB) ? 'lib' : 'src'
+const indexModule = require(`../../${env}`)
+const rulesFactory = require(`../../${env}/rulesFactory`)
+const rulesProcessor = require(`../../${env}/rulesProcessor`)
 
 describe('Module testing', () => {
   describe('Module API testing', () => {
