@@ -1,6 +1,6 @@
 const { describe, it } = require('mocha')
 const { expect, assert } = require('chai')
-const env = (process.env.TEST_LIB) ? 'lib' : 'src'
+const env = (process.env.TEST_LIB === 'true') ? 'lib' : 'src'
 const utils = require(`../../${env}/utils`)
 
 describe('utils testing', () => {
