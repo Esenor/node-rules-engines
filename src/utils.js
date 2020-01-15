@@ -5,6 +5,4 @@ const throwIfNotObject = (object, name = 'throwIfNotObject param') => {
   return true
 }
 
-module.exports = {
-  throwIfNotObject
-}
+module.exports.throwIfNotObject = throwIfNotObject

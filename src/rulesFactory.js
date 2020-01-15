@@ -17,6 +17,4 @@ const create = (ifFunc, thenFunc) => {
   }
 }
 
-module.exports = {
-  create
-}
+module.exports.create = create

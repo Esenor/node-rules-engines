@@ -35,6 +35,4 @@ const whileOneRuleIsTrue = (rules, data) => {
   return { ...data }
 }
 
-module.exports = {
-  process: processRules
-}
+module.exports.process = processRules
