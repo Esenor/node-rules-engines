@@ -12,7 +12,7 @@ const processRules = rules => {
 }
 
 const standard = (rules, data) => {
-  utils.throwIfNotObject(data, 'process.standard data')
+  utils.throwIfNotObject(data, 'process.standard data need to be an object')
   const newData = rules.reduce((data, rule) => {
     data = rule.run(data)
     return data
@@ -21,7 +21,7 @@ const standard = (rules, data) => {
 }
 
 const reverse = (rules, data) => {
-  utils.throwIfNotObject(data, 'process.reverse data')
+  utils.throwIfNotObject(data, 'process.reverse data need to be an object')
   const newData = rules.reverse().reduce((data, rule) => {
     data = rule.run(data)
     return data
@@ -30,7 +30,7 @@ const reverse = (rules, data) => {
 }
 
 const whileOneRuleIsTrue = (rules, data) => {
-  utils.throwIfNotObject(data, 'process.whileOneRuleIsTrue data')
+  utils.throwIfNotObject(data, 'process.whileOneRuleIsTrue data need to be an object')
   console.log(typeof rules)
   return { ...data }
 }

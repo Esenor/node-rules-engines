@@ -1,6 +1,11 @@
-const throwIfNotObject = (object, name = 'throwIfNotObject param') => {
+/**
+ * Throw an error if the first parameter is not an object
+ * @param mixed object
+ * @param string message
+ */
+const throwIfNotObject = (object, message = 'throwIfNotObject param need to be an object') => {
   if (typeof object !== 'object') {
-    throw new Error(`${name} need to be an object (type of ${typeof object})`)
+    throw new Error(message)
   }
   return true
 }

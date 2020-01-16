@@ -37,7 +37,7 @@ describe('Rules processor testing', () => {
         expect(rulesProcessor.process([]).standard(data)).to.be.deep.equal(data)
       })
       it('Function standard should throw an error if no object given', () => {
-        expect(() => rulesProcessor.process([]).standard()).to.throw('process.standard data need to be an object (type of undefined)')
+        expect(() => rulesProcessor.process([]).standard()).to.throw('process.standard data need to be an object')
       })
       it('Function standard should execute the rules', () => {
         const data = { id: 1 }
@@ -56,7 +56,7 @@ describe('Rules processor testing', () => {
         expect(rulesProcessor.process([]).reverse(data)).to.be.deep.equal(data)
       })
       it('Function reverse should throw an error if no object given', () => {
-        expect(() => rulesProcessor.process([]).reverse()).to.throw('process.reverse data need to be an object (type of undefined)')
+        expect(() => rulesProcessor.process([]).reverse()).to.throw('process.reverse data need to be an object')
       })
       it('Function reverse should execute the rules', () => {
         const data = { id: 1 }
@@ -75,7 +75,7 @@ describe('Rules processor testing', () => {
         expect(rulesProcessor.process([]).whileOneRuleIsTrue(data)).to.be.deep.equal(data)
       })
       it('Function whileOneRuleIsTrue should throw an error if no object given', () => {
-        expect(() => rulesProcessor.process([]).whileOneRuleIsTrue()).to.throw('process.whileOneRuleIsTrue data need to be an object (type of undefined)')
+        expect(() => rulesProcessor.process([]).whileOneRuleIsTrue()).to.throw('process.whileOneRuleIsTrue data need to be an object')
       })
       // it('Function whileOneRuleIsTrue should execute the rules', () => {
       // })

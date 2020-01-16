@@ -9,11 +9,11 @@ describe('utils testing', () => {
   describe('throwIfNotObject function testing', () => {
     it('Should return true if an object is given', () => assert.isTrue(utils.throwIfNotObject({ foo: 'bar' })))
     it('Should throw an error if no object given', () => {
-      expect(() => utils.throwIfNotObject()).to.throw('throwIfNotObject param need to be an object (type of undefined)')
-      expect(() => utils.throwIfNotObject('foo')).to.throw('throwIfNotObject param need to be an object (type of string)')
-      expect(() => utils.throwIfNotObject(42)).to.throw('throwIfNotObject param need to be an object (type of number)')
-      expect(() => utils.throwIfNotObject('foo', 'testing param')).to.throw('testing param need to be an object (type of string)')
-      expect(() => utils.throwIfNotObject(42, 'testing param')).to.throw('testing param need to be an object (type of number)')
+      expect(() => utils.throwIfNotObject()).to.throw('throwIfNotObject param need to be an object')
+      expect(() => utils.throwIfNotObject('foo')).to.throw('throwIfNotObject param need to be an object')
+      expect(() => utils.throwIfNotObject(42)).to.throw('throwIfNotObject param need to be an object')
+      expect(() => utils.throwIfNotObject('foo', 'testing param throw message')).to.throw('testing param throw message')
+      expect(() => utils.throwIfNotObject(42, 'testing param throw message')).to.throw('testing param throw message')
     })
   })
 })
