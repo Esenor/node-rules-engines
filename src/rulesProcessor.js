@@ -1,5 +1,9 @@
 const utils = require('./utils')
 
+/**
+ * Return methods to process the rules given in parameter
+ * @param array rules
+ */
 const processRules = rules => {
   if (!Array.isArray(rules)) {
     throw new Error(`process method need an array of rules to work(rule type of ${typeof rules})`)
