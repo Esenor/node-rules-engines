@@ -11,10 +11,15 @@ const processRules = rules => {
   return {
     standard: (data) => standard(rules, data),
     reverse: (data) => reverse(rules, data),
-    whileOneRuleIsTrue: (data) => whileOneRuleIsTrue(rules, data)
+    whileOneRuleIsTrue: (data, ascOrder) => whileOneRuleIsTrue(rules, data, ascOrder)
   }
 }
 
+/**
+ * Process each rules in asc order with an object and return the result object
+ * @param array rules
+ * @param object data
+ */
 const standard = (rules, data) => {
   utils.throwIfNotObject(data, 'process.standard data need to be an object')
   const newData = rules.reduce((data, rule) => {
@@ -24,6 +29,11 @@ const standard = (rules, data) => {
   return { ...newData }
 }
 
+/**
+ * Process each rules in desc order with an object and return the result object
+ * @param array rules
+ * @param object data
+ */
 const reverse = (rules, data) => {
   utils.throwIfNotObject(data, 'process.reverse data need to be an object')
   const newData = rules.reverse().reduce((data, rule) => {
@@ -33,9 +43,15 @@ const reverse = (rules, data) => {
   return { ...newData }
 }
 
-const whileOneRuleIsTrue = (rules, data) => {
+/**
+ * Process each rules asc while the object given is modified and return the result object
+ * @param array rules
+ * @param object data
+ * @param boolean ascOrder
+ */
+const whileOneRuleIsTrue = (rules, data, ascOrder = true) => {
   utils.throwIfNotObject(data, 'process.whileOneRuleIsTrue data need to be an object')
-  console.log(typeof rules)
+  // console.log(typeof rules, ascOrder === true)
   return { ...data }
 }
 
