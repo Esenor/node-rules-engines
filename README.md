@@ -15,10 +15,6 @@ Minimalist rules engine
 
 *ToDo*
 
-## Philosophy
-
-*ToDo*
-
 ## Docs & Examples
 
 *ToDo*
