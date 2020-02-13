@@ -4,7 +4,7 @@
  * @param string message
  */
 const throwIfNotObject = (object, message = 'throwIfNotObject param need to be an object') => {
-  if (typeof object !== 'object') {
+  if (typeof object === 'object') {
     throw new Error(message)
   }
   return true
